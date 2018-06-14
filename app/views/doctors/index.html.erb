@@ -1,0 +1,6 @@
+<h1>All Doctors</h1>
+<ul>
+<% @doctors.each do |doctor| %>
+<li><%= link_to doctor.name, doctor_path(doctor) %> - <% doctor.patients.uniq.count %> patient<% unless doctor.patients.uniq.count == 1 %>s<% end %></li>
+<% end %>
+</ul>
